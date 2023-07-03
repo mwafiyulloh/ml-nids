@@ -1,0 +1,53 @@
+FEATURES FROM OPENSEARCH DASHBOARDS 
+http://103.24.56.242:5601/
+{
+  "_index": "event-all-10s-2023.05.25",
+  "_id": "-vlvUYgB3HBZd_08TnkD", 
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "eth_src": "D4:CA:6D:3D:09:DD",
+    "ip_len": 142,
+    "msg": "(ipv4) IPv4 packet to broadcast dest address",
+    "priority": 3,
+    "rule": "116:414:1",
+    "rev": 1,
+    "@version": "1",
+    "ip_id": 0,
+    "@timestamp": "2023-05-25T05:43:20.000Z",
+    "mpls": 0,
+    "dst_addr": "255.255.255.255",
+    "proto": "UDP",
+    "reference": "https://www.snort.org/rule_docs/116-414",
+    "tos": 0,
+    "action": "allow",
+    "eth_dst": "FF:FF:FF:FF:FF:FF",
+    "count": 1,
+    "service": "unknown",
+    "vlan": 0,
+    "class": "none",
+    "src_addr": "10.10.10.1",
+    "iface": "eno1",
+    "pkt_num": 2732739,
+    "eth_type": "0x800",
+    "ttl": 64,
+    "sensor_id": "5df9fc4b1ed34e4ab0b893ea037385aa",
+    "pkt_len": 162,
+    "sid": 414,
+    "eth_len": 176,
+    "gid": 116,
+    "src_port": 5678,
+    "b64_data": "AAAZogABAAbUym09Cd0ABQAHR1ctQzMwNwAHAA82LjQ5LjYgKHN0YWJsZSkACAAITWlrcm9UaWsACgAEBAIGAAALAAlZQU5TLUdIWjIADAAKUkIxMTAwQUh4MgAOAAEBAA8AECABBHAANgFbAAAAAAAAAAEAEAAGZXRoZXI1ABEABAoKCgE=",
+    "dst_port": 5678,
+    "pkt_gen": "raw",
+    "dir": "C2S"
+  },
+  "fields": {
+    "@timestamp": [
+      "2023-05-25T05:43:20.000Z"
+    ]
+  },
+  "sort": [
+    1684993400000
+  ]
+}

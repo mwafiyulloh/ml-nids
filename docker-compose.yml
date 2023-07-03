@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  capturing:
+    build: ./Capturing/cicflowmeter
+    network_mode: host
+    volumes:
+      - ./Capturing/temp_flows:/Capturing/temp_flows
+      - ./manual_arg.py:/Capturing/manual_arg.py
+      
+      # set time synchronized to timezone of computer   
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+  prediction:
+    build: ./Prediction
+    volumes:
+      - ./Capturing/temp_flows:/Prediction/temp_flows
+      - ./Prediction/models:/Prediction/models
+      - ./Training/logs:/Prediction/logs
+      - ./manual_arg.py:/Prediction/src/manual_arg.py
+
+      # set time synchronized to timezone of computer   
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+  training: 
+    build: ./Training
+    volumes:
+      - ./Training/logs:/Training/logs
+      - ./Prediction/models:/Training/models
+      - ./Training/dataset:/Training/dataset
+      - ./Training/evaluation:/Training/evaluation
+      - ./manual_arg.py:/Training/src/manual_arg.py
+
+      # set time synchronized to timezone of computer   
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
