@@ -1,1 +1,1 @@
-# ml-nids
+# AI-IDS Architecture
